@@ -41,5 +41,6 @@ use {
     'nvim-tree/nvim-web-devicons', -- optional
   },
 }
+use {'christoomey/vim-tmux-navigator', lazy = false}
 end)
 
