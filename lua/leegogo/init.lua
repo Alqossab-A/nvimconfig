@@ -1,2 +1,2 @@
 require("leegogo.remap")
-print("hello from leegogo")
+require("leegogo.set")
