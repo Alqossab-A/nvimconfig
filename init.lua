@@ -1,0 +1,2 @@
+require("leegogo")
+print("hello")
