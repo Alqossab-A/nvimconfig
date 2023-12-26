@@ -57,5 +57,5 @@ use {'christoomey/vim-tmux-navigator', lazy = false,
         vim.keymap.set('n', "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
         vim.keymap.set('n', "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
     end}
+use { 'm4xshen/autoclose.nvim' }
 end)
-
