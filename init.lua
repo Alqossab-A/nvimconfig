@@ -532,7 +532,7 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        clangd = {},
+        clangd = { cmd = { 'clangd', '--offset-encoding=utf-16' } },
         gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
@@ -543,10 +543,9 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
         tsserver = {},
-        --
 
         lua_ls = {
-          -- cmd = {...},
+          -- cmd = {},
           -- filetypes { ...},
           -- capabilities = {},
           settings = {
@@ -736,6 +735,8 @@ require('lazy').setup({
 
       -- You can configure highlights by doing something like
       vim.cmd.hi 'Comment gui=none'
+      vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+      vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
 
       --vim.cmd 'hi Normal guibg=NONE ctermbg=NONE'
     end,
@@ -855,14 +856,7 @@ require('lazy').setup({
 
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', { desc = 'Show diagnostic [E]rror messages' })
 
-vim.cmd [[
-  autocmd FileType javascript setlocal tabstop=2
-  autocmd FileType javascript setlocal shiftwidth=2
-  autocmd FileType javascript setlocal expandtab
-  autocmd FileType typescript setlocal tabstop=2
-  autocmd FileType typescript setlocal shiftwidth=2
-  autocmd FileType typescript setlocal expandtab
-  autocmd FileType html setlocal tabstop=2
-  autocmd FileType html setlocal shiftwidth=2
-  autocmd FileType html setlocal expandtab
-]]
+local set = vim.opt
+set.tabstop = 2
+set.softtabstop = 2
+set.shiftwidth = 2
