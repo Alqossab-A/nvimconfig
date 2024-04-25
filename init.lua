@@ -282,7 +282,6 @@ require('lazy').setup({
         ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
         ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
         ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
       }
     end,
   },
@@ -855,6 +854,7 @@ require('lazy').setup({
 -- vim: ts=2 sts=2 sw=2 et
 
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', { desc = 'Show diagnostic [E]rror messages' })
+vim.keymap.set('n', '<leader>w', ':NvimTreeFocus<cr>', { desc = 'Show diagnostic [E]rror messages' })
 
 local set = vim.opt
 set.tabstop = 2
