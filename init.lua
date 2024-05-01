@@ -541,6 +541,20 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
+        volar = {
+          filetypes = { 'vue', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
+          init_options = {
+            vue = {
+              hybridMode = false,
+            },
+            typescript = {
+              -- Global install of typescript
+              --tsdk = '~/.nvm/versions/node/v20.11.1/lib/node_modules/typescript',
+              -- Current project version and what I will likely use
+              tsdk = vim.fn.getcwd() .. 'node_modules/typescript/lib',
+            },
+          },
+        },
         tsserver = {},
 
         lua_ls = {
